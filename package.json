@@ -1,0 +1,28 @@
+{
+  "name": "node.js_mentoringprogramm",
+  "version": "1.0.0",
+  "description": "HW",
+  "main": "app.js",
+  "scripts": {
+    "test": "test",
+    "task1": "nodemon task1_1.js",
+    "task2": "nodemon task1_2.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victoria-cloud/node.js_mentoringProgramm.git"
+  },
+  "author": "Viktoriia Korepanova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/victoria-cloud/node.js_mentoringProgramm/issues"
+  },
+  "homepage": "https://github.com/victoria-cloud/node.js_mentoringProgramm#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "csv-writer": "^1.6.0",
+    "csvtojson": "^2.0.10"
+  }
+}
