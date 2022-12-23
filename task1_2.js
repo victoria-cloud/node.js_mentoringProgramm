@@ -9,31 +9,39 @@
 const csvFilePath='./csv/Pets-Main View.csv'
 const csv=require('csvtojson')
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
+const fs =require('fs')
+
+const readStream=fs.createReadStream(csvFilePath);
+const writeStream=fs.createWriteStream('csv/newPETS.csv');
+readStream.pipe(csv()).pipe(writeStream);
 
 
-csv()
-.fromFile(csvFilePath)
-.then(jsonObj =>{ 
-    const csvWriter = createCsvWriter({
-        path: 'csv/newPETS.csv',
-        header: [
-            {id: 'name', title: 'Name'},
-            {id: 'Image', title: 'Image'},
-            {id: 'DOB', title: 'DOB'},
-            {id: 'Animal', title: 'Animal'},
-            {id: 'Sex', title: 'Sex'},
-            {id: 'Vet Visits', title: 'Vet Visits'},
-            {id: 'Medications', title: 'Medications'},
-            {id: 'Notes', title: 'Notes'},
-        ]
-    })
-    csvWriter.writeRecords(jsonObj)
-    .then(() => {
-        console.log('...Done');
-    });
+// csv()
+// .fromFile(csvFilePath)
+// .then(jsonObj =>{ 
+//     const csvWriter = createCsvWriter({
+//         path: 'csv/newPETS.csv',
+//         header: [
+//             {id: 'Name', title: 'Name'},
+//             {id: 'DOB', title: 'DOB'},
+//             {id: 'Animal', title: 'Animal'},
+//             {id: 'Sex', title: 'Sex'},
+//             {id: 'Vet Visits', title: 'Vet Visits'},
+//             {id: 'Medications', title: 'Medications'},
+//             {id: 'Notes', title: 'Notes'},
+//         ]
+//     })
+//     csvWriter.writeRecords(jsonObj)
+//     .then(() => {
+//         console.log('...Done');
+//     });
 
-})
-.catch(err => console.log(err))
+// })
+
+// .catch(err => console.log(err))
+
+
+
 
 
 
