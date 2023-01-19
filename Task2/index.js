@@ -1,5 +1,4 @@
 import express from 'express'
-import { v4 as uuid } from 'uuid'
 import router from "./router.js"
 
 const PORT = 3000

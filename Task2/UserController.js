@@ -5,9 +5,6 @@ class UserController {
     
     createUser(req,res){
         const user= req.body;
-        if(!Object.keys(user).length){
-            return res.sendStatus(400)
-        }
         user.id=uuid()
         users.push(user)
         console.log(`USERS: ${JSON.stringify(users)} `)
@@ -19,6 +16,9 @@ class UserController {
     }
 
     getUserById (req,res) {
+        if(!req.params.id){
+            res.status(400).json({message:"missed ID"})
+        }
         res.status(200).json(users.filter( el => el.id===req.params.id)[0])
     }
 
