@@ -40,6 +40,14 @@ class UserController {
         })
         res.status(200).json(users)
     }
+    getAutoSuggestUsers(loginSubstring, limit){
+        
+    }
 }
 
 export default new UserController()
+
+
+// get auto-suggest list from limitusers,
+// sorted by login property and filtered by loginSubstringin
+// the login property:getAutoSuggestUsers(loginSubstring, limit)

@@ -1,6 +1,5 @@
 import Joi from 'joi'
 
-
 const userSchema = Joi.object({
     login : Joi.string().email().required(),
     password : Joi.string().regex(/^[a-zA-Z0-9]*$/).required(),
